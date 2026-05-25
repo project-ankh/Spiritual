@@ -1,31 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KORE Courses</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KORE Courses | Sacred Temple Learning</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:#f4f1e8;color:#2f2a23;overflow-x:hidden}
-nav{position:fixed;top:0;width:100%;background:rgba(244,241,232,.95);padding:16px;display:flex;justify-content:center;gap:28px;border-bottom:1px solid #d9d1bf;z-index:999}
-nav a{text-decoration:none;color:#3b352d;font-weight:600}
-.hero{height:100vh;display:flex;justify-content:center;align-items:center;padding:20px;background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center}
-.hero-box{background:rgba(255,255,255,.84);padding:50px 35px;border-radius:28px;max-width:900px;text-align:center;backdrop-filter:blur(8px);box-shadow:0 10px 35px rgba(0,0,0,.12)}
+:root{--gold:#d4af37;--silver:#d8d8d8;--soft:#faf8f3;--text:#2c2b28}
+body{
+font-family:'Inter',sans-serif;
+background:linear-gradient(to bottom,#fff,#f8f7f3,#f2eee4);
+color:var(--text);
+overflow-x:hidden;
+}
+body::before{
+content:'';
+position:fixed;
+inset:0;
+pointer-events:none;
+background:radial-gradient(circle at top,rgba(212,175,55,.12),transparent 50%);
+z-index:-1;
+}
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:25px;
+padding:18px;
+backdrop-filter:blur(20px);
+background:rgba(255,255,255,.78);
+border-bottom:1px solid rgba(212,175,55,.25);
+z-index:999;
+box-shadow:0 5px 20px rgba(212,175,55,.12);
+}
+nav a{
+text-decoration:none;
+color:#7d6112;
+font-weight:600;
+transition:.3s;
+}
+nav a:hover{color:var(--gold);text-shadow:0 0 10px rgba(212,175,55,.5)}
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1900&auto=format&fit=crop') center/cover;
+position:relative;
+}
+.hero::after{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(255,255,255,.58);
+backdrop-filter:blur(4px);
+}
+.hero-box{
+position:relative;
+z-index:2;
+max-width:950px;
+text-align:center;
+padding:60px 45px;
+border-radius:35px;
+background:rgba(255,255,255,.68);
+backdrop-filter:blur(20px);
+border:1px solid rgba(212,175,55,.3);
+box-shadow:0 0 40px rgba(212,175,55,.15);
+}
 h1,h2,h3{font-family:'Cinzel',serif}
-h1{font-size:4rem;margin-bottom:10px}
-.section{padding:90px 20px}
-.container{max-width:1100px;margin:auto;background:#fff;padding:40px;border-radius:24px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
-.container h2{margin-bottom:18px;text-align:center}
-.container p,.container li{line-height:1.9;font-size:1.03rem}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:30px}
-.card{background:#faf8f3;padding:25px;border-radius:20px;border:1px solid #ddd5c4;transition:.3s}
-.card:hover{transform:translateY(-5px)}
-.price{font-size:1.3rem;font-weight:700;margin:12px 0;color:#3b352d}
-.btn{display:inline-block;margin-top:18px;padding:12px 20px;background:#3b352d;color:#fff;text-decoration:none;border-radius:999px;font-weight:600}
-.float{position:fixed;font-size:20px;pointer-events:none;animation:float 14s linear infinite;opacity:.4}
-@keyframes float{0%{transform:translateY(100vh)}100%{transform:translateY(-120vh)}}
-footer{padding:25px;text-align:center;background:#ebe6d8;margin-top:30px}
+h1{
+font-size:4.8rem;
+color:#9d7a15;
+text-shadow:0 0 15px rgba(212,175,55,.45);
+margin-bottom:14px;
+}
+.hero p{font-size:1.1rem;line-height:1.9;max-width:700px;margin:auto}
+.section{padding:110px 20px}
+.container{
+max-width:1150px;
+margin:auto;
+padding:50px;
+border-radius:35px;
+background:rgba(255,255,255,.82);
+backdrop-filter:blur(18px);
+border:1px solid rgba(212,175,55,.25);
+box-shadow:0 15px 35px rgba(0,0,0,.08),0 0 20px rgba(212,175,55,.08);
+}
+h2{text-align:center;font-size:2.4rem;color:#8f6b00;margin-bottom:25px}
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:28px;
+margin-top:35px;
+}
+.card{
+background:linear-gradient(145deg,rgba(255,255,255,.95),rgba(248,244,235,.95));
+padding:32px;
+border-radius:30px;
+border:1px solid rgba(212,175,55,.2);
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+.card:hover{
+transform:translateY(-12px) scale(1.02);
+box-shadow:0 15px 35px rgba(212,175,55,.2);
+}
+.card::before{
+content:'';
+position:absolute;
+inset:-100%;
+background:linear-gradient(120deg,transparent,rgba(212,175,55,.18),transparent);
+transition:1s;
+}
+.card:hover::before{inset:100%}
+.price{
+font-size:1.6rem;
+font-weight:700;
+margin:15px 0;
+color:#9f7800;
+text-shadow:0 0 8px rgba(212,175,55,.2);
+}
+.btn{
+display:inline-block;
+margin-top:18px;
+padding:14px 28px;
+border-radius:999px;
+background:linear-gradient(135deg,var(--gold),#f3de9a);
+color:#fff;
+font-weight:700;
+text-decoration:none;
+box-shadow:0 0 18px rgba(212,175,55,.4);
+transition:.3s;
+}
+.btn:hover{transform:scale(1.05);box-shadow:0 0 30px rgba(212,175,55,.6)}
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:30px;
+}
+.feature-box{
+padding:22px;
+border-radius:24px;
+background:rgba(255,255,255,.88);
+border:1px solid rgba(212,175,55,.18);
+text-align:center;
+}
+.float{
+position:fixed;
+font-size:22px;
+pointer-events:none;
+animation:float 12s linear infinite;
+opacity:.55;
+}
+@keyframes float{
+0%{transform:translateY(100vh) rotate(0deg)}
+100%{transform:translateY(-120vh) rotate(360deg)}
+}
+footer{
+text-align:center;
+padding:35px;
+background:linear-gradient(to right,#fff,#f7f2e8,#fff);
+border-top:1px solid rgba(212,175,55,.2);
+}
+@media(max-width:768px){
+h1{font-size:3rem}
+.hero-box,.container{padding:30px 22px}
+nav{gap:12px;font-size:.9rem;flex-wrap:wrap}
+}
 </style>
 </head>
 <body>
@@ -43,7 +190,7 @@ footer{padding:25px;text-align:center;background:#ebe6d8;margin-top:30px}
 </section>
 <section class="section" id="courses">
 <div class="container">
-<h2>Courses • ₹777 Each</h2>
+<h2>Temple Courses • ₹777 Each</h2>
 <div class="cards">
 <div class="card">
 <h3>📜 My Philosophy</h3>
@@ -77,21 +224,27 @@ footer{padding:25px;text-align:center;background:#ebe6d8;margin-top:30px}
 </section>
 <section class="section" id="about">
 <div class="container">
-<h2>About the Courses</h2>
+<h2>About the Temple Courses</h2>
 <p>All courses are conducted over one week and are designed for reflective learning, discussion, and guided exploration. Sessions include live classes, structured materials, and certification of completion.</p>
+<div class="features">
+<div class="feature-box">📜 Structured Notes</div>
+<div class="feature-box">🏛️ Live Guidance</div>
+<div class="feature-box">✨ Certification</div>
+<div class="feature-box">🌙 Reflective Learning</div>
+</div>
 </div>
 </section>
-<footer>KORE COURSES • Learning & Reflection</footer>
+<footer>KORE COURSES • Learning & Reflection ✨</footer>
 <script>
-const emojis=['🍃','✨','📜','🌾'];
-setInterval(function(){
+const emojis=['✨','☥','📜','🕯️','🌙'];
+setInterval(()=>{
 const e=document.createElement('div');
 e.className='float';
 e.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
 e.style.left=Math.random()*100+'vw';
 document.body.appendChild(e);
-setTimeout(function(){e.remove();},14000);
-},2000);
+setTimeout(()=>e.remove(),12000)
+},1500)
 </script>
 </body>
 </html>
